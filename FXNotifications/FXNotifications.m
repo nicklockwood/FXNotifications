@@ -1,7 +1,7 @@
 //
 //  FXNotifications.m
 //
-//  Version 1.0
+//  Version 1.0.1
 //
 //  Created by Nick Lockwood on 20/11/2013.
 //  Copyright (c) 2013 Charcoal Design
@@ -35,6 +35,12 @@
 #import <objc/runtime.h>
 
 
+#import <Availability.h>
+#if !__has_feature(objc_arc) || !__has_feature(objc_arc_weak)
+#error This class requires automatic reference counting and weak references
+#endif
+
+
 typedef void (^FXNotificationBlock)(NSNotification *note, __weak id observer);
 
 
@@ -44,19 +50,21 @@ typedef void (^FXNotificationBlock)(NSNotification *note, __weak id observer);
 @property (nonatomic, copy) FXNotificationBlock block;
 @property (nonatomic, strong) NSOperationQueue *queue;
 
+- (void)action:(NSNotification *)note;
+
 @end
 
 
 @implementation NSObject (FXNotifications)
 
-- (NSMutableSet *)FXNotifications_wrappers
+- (NSMutableArray *)FXNotifications_wrappers
 {
     @synchronized(self)
     {
-        NSMutableSet *wrappers = objc_getAssociatedObject(self, _cmd);
+        NSMutableArray *wrappers = objc_getAssociatedObject(self, _cmd);
         if (!wrappers)
         {
-            wrappers = [NSMutableSet set];
+            wrappers = [NSMutableArray array];
             objc_setAssociatedObject(self, _cmd, wrappers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         }
         return wrappers;
@@ -76,6 +84,14 @@ typedef void (^FXNotificationBlock)(NSNotification *note, __weak id observer);
     @synchronized(self)
     {
         [[self FXNotifications_wrappers] removeObject:wrapper];
+    }
+}
+
+- (void)FXNotification_action:(NSNotification *)note
+{
+    for (FXNotificationWrapper *wrapper in [self FXNotifications_wrappers])
+    {
+        [wrapper action:note];
     }
 }
 
@@ -121,10 +137,13 @@ typedef void (^FXNotificationBlock)(NSNotification *note, __weak id observer);
     FXNotificationWrapper *wrapper = [[FXNotificationWrapper alloc] init];
     wrapper.observer = observer;
     wrapper.block = block;
-    wrapper.queue = queue;
+    wrapper.queue = queue ?: [NSOperationQueue currentQueue];
     
-    [[NSNotificationCenter defaultCenter] addObserver:wrapper selector:@selector(action:) name:name object:object];
     [observer FXNotifications_addObserverWrapper:wrapper];
+    [[NSNotificationCenter defaultCenter] addObserver:observer
+                                             selector:@selector(FXNotification_action:)
+                                                 name:name
+                                               object:object];
 }
 
 @end

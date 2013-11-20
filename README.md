@@ -26,3 +26,21 @@ Installation & Usage
 --------------------
 
 To use FXNotifications, just drag the FXNotifications.h and .m files into your project and import the header file in your class.
+
+
+Methods
+------------
+
+FXNotifications extends NSNotificationCenter with a single method
+
+    - (void)addObserver:(id)observer
+                forName:(NSString *)name
+                 object:(id)object
+                  queue:(NSOperationQueue *)queue
+             usingBlock:(void (^)(NSNotification *note, __weak id observer))block;
+             
+This method is a hybrid of the two built-in notification observer methods. The observer parameter is required, and represents the owner of the block argument. When the observer is released, the block will be released as well.
+
+The name, object, queue and block arguments work as they do in the normal block-based observer method. The queue parameter defaults to [NSOperationQueue currentQueue] if nil. To avoid retain cycles in your block, you can refer to the weak observer parameter that is passed as a second argument.
+
+There is no token value returned; to stop observing the notification, use the standard `-removeObserver:` or `-removeObserver:name:object:` methods of NSNotificationCenter. There is no need to call removeObserver: in the observer's dealloc method; this is done automatically.

@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  NotificationsTesr
+//  NotificationsTest
 //
 //  Created by Nick Lockwood on 20/11/2013.
 //  Copyright (c) 2013 Charcoal Design. All rights reserved.
@@ -40,7 +40,7 @@ static NSString *const IncrementCountNotification = @"IncrementCountNotification
     //using the FXNotifications method, this approach doesn't leak and just works as expected
     [[NSNotificationCenter defaultCenter] addObserver:self
                                               forName:IncrementCountNotification
-                                               object:nil
+                                               object:self.label
                                                 queue:[NSOperationQueue mainQueue]
                                            usingBlock:^(NSNotification *note, __weak ViewController *self) {
         
@@ -52,6 +52,11 @@ static NSString *const IncrementCountNotification = @"IncrementCountNotification
 - (IBAction)increment
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:IncrementCountNotification object:self.label];
+}
+
+- (IBAction)removeObserver
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IncrementCountNotification object:self.label];
 }
 
 @end
