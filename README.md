@@ -1,7 +1,7 @@
 Purpose
 --------------
 
-FXNotifications is a category on NSNotificationCenter that provides an improved block-based API that is simpler and eaier to use, and avoids the various retain cycle and memeory leak pitfalls of the official API.
+FXNotifications is a category on NSNotificationCenter that provides an improved block-based API that is simpler and easier to use, and avoids the various retain cycle and memory leak pitfalls of the official API.
 
 For more details, see this article: http://sealedabstract.com/code/nsnotificationcenter-with-blocks-considered-harmful/ and this gist: https://gist.github.com/nicklockwood/7559729
 
@@ -19,7 +19,13 @@ NOTE: 'Supported' means that the library has been tested with this version. 'Com
 ARC Compatibility
 ------------------
 
-FXNotifications requires ARC and uses weak references
+FXNotifications requires ARC and uses weak references.
+
+
+Thread Safety
+--------------
+
+It is safe to add and remove observers concurrently on different threads using the FXNotification methods. Callback blocks will be executed on the specified queue.
 
 
 Installation & Usage
@@ -44,3 +50,13 @@ This method is a hybrid of the two built-in notification observer methods. The o
 The name, object, queue and block arguments work as they do in the normal block-based observer method. The queue parameter defaults to [NSOperationQueue currentQueue] if nil. To avoid retain cycles in your block, you can refer to the weak observer parameter that is passed as a second argument.
 
 There is no token value returned; to stop observing the notification, use the standard `-removeObserver:` or `-removeObserver:name:object:` methods of NSNotificationCenter. There is no need to call removeObserver: in the observer's dealloc method; this is done automatically.
+
+An typical usage might be:
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                              forName:NSSomeNotificationName
+                                               object:nil
+                                                queue:[NSOperationQueue mainQueue]
+                                           usingBlock:^(NSNotification *note, __weak id observer) {
+                                                          NSLog(@"self: %@", observer); // look, no leaks!
+                                                      }];
