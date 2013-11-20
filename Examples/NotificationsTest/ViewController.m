@@ -26,16 +26,25 @@ static NSString *const IncrementCountNotification = @"IncrementCountNotification
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+    [self addObserver];
+}
+
+- (IBAction)increment
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:IncrementCountNotification object:self.label];
+}
+
+- (IBAction)addObserver
+{
     //using the built-in method (in a naive way), we would leak like hell
-//    [[NSNotificationCenter defaultCenter] addObserverForName:IncrementCountNotification
-//                                                      object:nil
-//                                                       queue:[NSOperationQueue mainQueue]
-//                                                  usingBlock:^(NSNotification *note) {
-//        
-//        UILabel *label = note.object;
-//        label.text = [NSString stringWithFormat:@"Presses: %@", @(++self.count)];
-//    }];
+    //    [[NSNotificationCenter defaultCenter] addObserverForName:IncrementCountNotification
+    //                                                      object:nil
+    //                                                       queue:[NSOperationQueue mainQueue]
+    //                                                  usingBlock:^(NSNotification *note) {
+    //
+    //        UILabel *label = note.object;
+    //        label.text = [NSString stringWithFormat:@"Presses: %@", @(++self.count)];
+    //    }];
     
     //using the FXNotifications method, this approach doesn't leak and just works as expected
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -43,15 +52,10 @@ static NSString *const IncrementCountNotification = @"IncrementCountNotification
                                                object:self.label
                                                 queue:[NSOperationQueue mainQueue]
                                            usingBlock:^(NSNotification *note, __weak ViewController *self) {
-        
-        UILabel *label = note.object;
-        label.text = [NSString stringWithFormat:@"Presses: %@", @(++self.count)];
-    }];
-}
-
-- (IBAction)increment
-{
-    [[NSNotificationCenter defaultCenter] postNotificationName:IncrementCountNotification object:self.label];
+                                               
+                                               UILabel *label = note.object;
+                                               label.text = [NSString stringWithFormat:@"Presses: %@", @(++self.count)];
+                                           }];
 }
 
 - (IBAction)removeObserver

@@ -1,7 +1,7 @@
 //
 //  FXNotifications.m
 //
-//  Version 1.0.1
+//  Version 1.0.2
 //
 //  Created by Nick Lockwood on 20/11/2013.
 //  Copyright (c) 2013 Charcoal Design
@@ -54,19 +54,18 @@ typedef void (^FXNotificationBlock)(NSNotification *note, __weak id observer);
 @property (nonatomic, weak) NSNotificationCenter *center;
 
 - (void)action:(NSNotification *)note;
-- (BOOL)matchesName:(NSString *)name object:(id)object;
 
 @end
 
 
 @implementation NSObject (FXNotifications)
 
-- (NSMutableArray *)FXNotifications_wrappers
+- (NSMutableArray *)FXNotifications_wrappers:(BOOL)create
 {
     @synchronized(self)
     {
         NSMutableArray *wrappers = objc_getAssociatedObject(self, _cmd);
-        if (!wrappers)
+        if (!wrappers && create)
         {
             wrappers = [NSMutableArray array];
             objc_setAssociatedObject(self, _cmd, wrappers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -79,19 +78,7 @@ typedef void (^FXNotificationBlock)(NSNotification *note, __weak id observer);
 {
     @synchronized(self)
     {
-        NSInteger count = 0;
-        for (FXNotificationWrapper *_wrapper in [self FXNotifications_wrappers])
-        {
-            if ([_wrapper matchesName:wrapper.name object:wrapper.object]) count ++;
-        }
-        if (count == 0)
-        {
-            [wrapper.center addObserver:self
-                               selector:@selector(FXNotification_action:)
-                                   name:wrapper.name
-                                 object:wrapper.object];
-        }
-        [[self FXNotifications_wrappers] addObject:wrapper];
+        [[self FXNotifications_wrappers:YES] addObject:wrapper];
     }
 }
 
@@ -99,27 +86,7 @@ typedef void (^FXNotificationBlock)(NSNotification *note, __weak id observer);
 {
     @synchronized(self)
     {
-        [[self FXNotifications_wrappers] removeObject:wrapper];
-        NSInteger count = 0;
-        for (FXNotificationWrapper *_wrapper in [self FXNotifications_wrappers])
-        {
-            if ([_wrapper matchesName:wrapper.name object:wrapper.object]) count ++;
-        }
-        if (count == 0)
-        {
-            [wrapper.center removeObserver:self];
-        }
-    }
-}
-
-- (void)FXNotification_action:(NSNotification *)note
-{
-    for (FXNotificationWrapper *wrapper in [self FXNotifications_wrappers])
-    {
-        if ([wrapper matchesName:note.name object:note.object])
-        {
-            [wrapper action:note];
-        }
+        [[self FXNotifications_wrappers:NO] removeObject:wrapper];
     }
 }
 
@@ -145,20 +112,23 @@ typedef void (^FXNotificationBlock)(NSNotification *note, __weak id observer);
     }
 }
 
-- (BOOL)matchesName:(NSString *)name object:(id)object
-{
-    return  (!self.name || [name isEqualToString:self.name]) && (!self.object || object == self.object);
-}
-
 - (void)dealloc
 {
-    [_observer FXNotifications_removeObserverWrapper:self];
+    [_center removeObserver:self];
 }
 
 @end
 
 
 @implementation NSNotificationCenter (FXNotifications)
+
++ (void)load
+{
+    SEL original = @selector(removeObserver:name:object:);
+    SEL replacement = @selector(FXNotification_removeObserver:name:object:);
+    method_exchangeImplementations(class_getInstanceMethod(self, original),
+                                   class_getInstanceMethod(self, replacement));
+}
 
 - (void)addObserver:(id)observer
             forName:(NSString *)name
@@ -175,6 +145,21 @@ typedef void (^FXNotificationBlock)(NSNotification *note, __weak id observer);
     wrapper.center = self;
     
     [observer FXNotifications_addObserverWrapper:wrapper];
+    [self addObserver:wrapper selector:@selector(action:) name:name object:object];
+}
+
+- (void)FXNotification_removeObserver:(id)observer name:(NSString *)name object:(id)object
+{
+    for (FXNotificationWrapper *wrapper in [[observer FXNotifications_wrappers:NO] reverseObjectEnumerator])
+    {
+        if (wrapper.center == self &&
+            (!wrapper.name || !name || [wrapper.name isEqualToString:name]) &&
+            (!wrapper.object || !object || wrapper.object == object))
+        {
+            [[observer FXNotifications_wrappers:NO] removeObject:wrapper];
+        }
+    }
+    [self FXNotification_removeObserver:observer name:name object:object];
 }
 
 @end
