@@ -16,8 +16,29 @@
 		010F33AB183CC2780036FF0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F33AA183CC2780036FF0C /* ViewController.m */; };
 		010F33AD183CC2780036FF0C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 010F33AC183CC2780036FF0C /* Images.xcassets */; };
 		010F33D1183CC9DE0036FF0C /* FXNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F33D0183CC9DE0036FF0C /* FXNotifications.m */; };
+		1A0283DE18D0255700DCEB95 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0283DD18D0255700DCEB95 /* Cocoa.framework */; };
+		1A0283E818D0255700DCEB95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A0283E618D0255700DCEB95 /* InfoPlist.strings */; };
+		1A0283EA18D0255700DCEB95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0283E918D0255700DCEB95 /* main.m */; };
+		1A0283F118D0255700DCEB95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0283F018D0255700DCEB95 /* AppDelegate.m */; };
+		1A0283F418D0255700DCEB95 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0283F218D0255700DCEB95 /* MainMenu.xib */; };
+		1A0283F618D0255700DCEB95 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0283F518D0255700DCEB95 /* Images.xcassets */; };
+		1A0283FC18D0255700DCEB95 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F33B3183CC2780036FF0C /* XCTest.framework */; };
+		1A0283FD18D0255700DCEB95 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0283DD18D0255700DCEB95 /* Cocoa.framework */; };
+		1A02841718D02BC200DCEB95 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A02841518D02BC200DCEB95 /* WindowController.m */; };
+		1A02841818D02BC200DCEB95 /* WindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A02841618D02BC200DCEB95 /* WindowController.xib */; };
+		1A02841918D0375800DCEB95 /* FXNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F33D0183CC9DE0036FF0C /* FXNotifications.m */; };
 		1AD9155918D0210B006E1635 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD9155B18D0210B006E1635 /* Main.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A0283FE18D0255700DCEB95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 010F3389183CC2780036FF0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A0283DB18D0255700DCEB95;
+			remoteInfo = NotificationsTest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		010F3391183CC2780036FF0C /* NotificationsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +57,23 @@
 		010F33B3183CC2780036FF0C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		010F33CF183CC9DE0036FF0C /* FXNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXNotifications.h; sourceTree = "<group>"; };
 		010F33D0183CC9DE0036FF0C /* FXNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXNotifications.m; sourceTree = "<group>"; };
+		1A0283DC18D0255700DCEB95 /* NotificationsTest (OS X).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NotificationsTest (OS X).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A0283DD18D0255700DCEB95 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		1A0283E018D0255700DCEB95 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1A0283E118D0255700DCEB95 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1A0283E218D0255700DCEB95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1A0283E518D0255700DCEB95 /* NotificationsTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotificationsTest-Info.plist"; sourceTree = "<group>"; };
+		1A0283E718D0255700DCEB95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1A0283E918D0255700DCEB95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1A0283EB18D0255700DCEB95 /* NotificationsTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotificationsTest-Prefix.pch"; sourceTree = "<group>"; };
+		1A0283EF18D0255700DCEB95 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1A0283F018D0255700DCEB95 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1A0283F318D0255700DCEB95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1A0283F518D0255700DCEB95 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1A0283FB18D0255700DCEB95 /* NotificationsTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationsTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A02841418D02BC200DCEB95 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
+		1A02841518D02BC200DCEB95 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
+		1A02841618D02BC200DCEB95 /* WindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WindowController.xib; sourceTree = "<group>"; };
 		1AD9155A18D0210B006E1635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +85,23 @@
 				010F3397183CC2780036FF0C /* CoreGraphics.framework in Frameworks */,
 				010F3399183CC2780036FF0C /* UIKit.framework in Frameworks */,
 				010F3395183CC2780036FF0C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A0283D918D0255700DCEB95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A0283DE18D0255700DCEB95 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A0283F818D0255700DCEB95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A0283FD18D0255700DCEB95 /* Cocoa.framework in Frameworks */,
+				1A0283FC18D0255700DCEB95 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				010F3391183CC2780036FF0C /* NotificationsTest.app */,
+				1A0283DC18D0255700DCEB95 /* NotificationsTest (OS X).app */,
+				1A0283FB18D0255700DCEB95 /* NotificationsTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,6 +135,8 @@
 				010F3396183CC2780036FF0C /* CoreGraphics.framework */,
 				010F3398183CC2780036FF0C /* UIKit.framework */,
 				010F33B3183CC2780036FF0C /* XCTest.framework */,
+				1A0283DD18D0255700DCEB95 /* Cocoa.framework */,
+				1A0283DF18D0255700DCEB95 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -86,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				1AD9155618D01F79006E1635 /* iOS */,
+				1A02840E18D025E700DCEB95 /* OS X */,
 			);
 			path = NotificationsTest;
 			sourceTree = "<group>";
@@ -111,15 +171,51 @@
 			path = ../FXNotifications;
 			sourceTree = "<group>";
 		};
+		1A0283DF18D0255700DCEB95 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A0283E018D0255700DCEB95 /* AppKit.framework */,
+				1A0283E118D0255700DCEB95 /* CoreData.framework */,
+				1A0283E218D0255700DCEB95 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1A0283E418D0255700DCEB95 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A0283E518D0255700DCEB95 /* NotificationsTest-Info.plist */,
+				1A0283E618D0255700DCEB95 /* InfoPlist.strings */,
+				1A0283E918D0255700DCEB95 /* main.m */,
+				1A0283EB18D0255700DCEB95 /* NotificationsTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1A02840E18D025E700DCEB95 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				1A0283EF18D0255700DCEB95 /* AppDelegate.h */,
+				1A0283F018D0255700DCEB95 /* AppDelegate.m */,
+				1A0283F218D0255700DCEB95 /* MainMenu.xib */,
+				1A02841418D02BC200DCEB95 /* WindowController.h */,
+				1A02841518D02BC200DCEB95 /* WindowController.m */,
+				1A02841618D02BC200DCEB95 /* WindowController.xib */,
+				1A0283F518D0255700DCEB95 /* Images.xcassets */,
+				1A0283E418D0255700DCEB95 /* Supporting Files */,
+			);
+			path = "OS X";
+			sourceTree = "<group>";
+		};
 		1AD9155618D01F79006E1635 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				010F33A3183CC2780036FF0C /* AppDelegate.h */,
 				010F33A4183CC2780036FF0C /* AppDelegate.m */,
-				010F33AC183CC2780036FF0C /* Images.xcassets */,
-				1AD9155B18D0210B006E1635 /* Main.storyboard */,
 				010F33A9183CC2780036FF0C /* ViewController.h */,
 				010F33AA183CC2780036FF0C /* ViewController.m */,
+				1AD9155B18D0210B006E1635 /* Main.storyboard */,
+				010F33AC183CC2780036FF0C /* Images.xcassets */,
 				010F339B183CC2780036FF0C /* Supporting Files */,
 			);
 			path = iOS;
@@ -145,6 +241,41 @@
 			productReference = 010F3391183CC2780036FF0C /* NotificationsTest.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1A0283DB18D0255700DCEB95 /* NotificationsTest (OS X) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A02840818D0255800DCEB95 /* Build configuration list for PBXNativeTarget "NotificationsTest (OS X)" */;
+			buildPhases = (
+				1A0283D818D0255700DCEB95 /* Sources */,
+				1A0283D918D0255700DCEB95 /* Frameworks */,
+				1A0283DA18D0255700DCEB95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NotificationsTest (OS X)";
+			productName = NotificationsTest;
+			productReference = 1A0283DC18D0255700DCEB95 /* NotificationsTest (OS X).app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A0283FA18D0255700DCEB95 /* NotificationsTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A02840B18D0255800DCEB95 /* Build configuration list for PBXNativeTarget "NotificationsTestTests" */;
+			buildPhases = (
+				1A0283F718D0255700DCEB95 /* Sources */,
+				1A0283F818D0255700DCEB95 /* Frameworks */,
+				1A0283F918D0255700DCEB95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A0283FF18D0255700DCEB95 /* PBXTargetDependency */,
+			);
+			name = NotificationsTestTests;
+			productName = NotificationsTestTests;
+			productReference = 1A0283FB18D0255700DCEB95 /* NotificationsTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -153,6 +284,11 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Charcoal Design";
+				TargetAttributes = {
+					1A0283FA18D0255700DCEB95 = {
+						TestTargetID = 010F3390183CC2780036FF0C;
+					};
+				};
 			};
 			buildConfigurationList = 010F338C183CC2780036FF0C /* Build configuration list for PBXProject "NotificationsTest" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -168,6 +304,8 @@
 			projectRoot = "";
 			targets = (
 				010F3390183CC2780036FF0C /* NotificationsTest (iOS) */,
+				1A0283DB18D0255700DCEB95 /* NotificationsTest (OS X) */,
+				1A0283FA18D0255700DCEB95 /* NotificationsTestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -180,6 +318,24 @@
 				1AD9155918D0210B006E1635 /* Main.storyboard in Resources */,
 				010F33AD183CC2780036FF0C /* Images.xcassets in Resources */,
 				010F339F183CC2780036FF0C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A0283DA18D0255700DCEB95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A0283E818D0255700DCEB95 /* InfoPlist.strings in Resources */,
+				1A0283F618D0255700DCEB95 /* Images.xcassets in Resources */,
+				1A02841818D02BC200DCEB95 /* WindowController.xib in Resources */,
+				1A0283F418D0255700DCEB95 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A0283F918D0255700DCEB95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +353,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1A0283D818D0255700DCEB95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A02841918D0375800DCEB95 /* FXNotifications.m in Sources */,
+				1A0283F118D0255700DCEB95 /* AppDelegate.m in Sources */,
+				1A02841718D02BC200DCEB95 /* WindowController.m in Sources */,
+				1A0283EA18D0255700DCEB95 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A0283F718D0255700DCEB95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A0283FF18D0255700DCEB95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A0283DB18D0255700DCEB95 /* NotificationsTest (OS X) */;
+			targetProxy = 1A0283FE18D0255700DCEB95 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		010F339D183CC2780036FF0C /* InfoPlist.strings */ = {
@@ -206,6 +388,22 @@
 				010F339E183CC2780036FF0C /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1A0283E618D0255700DCEB95 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A0283E718D0255700DCEB95 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1A0283F218D0255700DCEB95 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A0283F318D0255700DCEB95 /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 		1AD9155B18D0210B006E1635 /* Main.storyboard */ = {
@@ -323,6 +521,102 @@
 			};
 			name = Release;
 		};
+		1A02840918D0255800DCEB95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NotificationsTest/OS X/NotificationsTest-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "NotificationsTest/OS X/NotificationsTest-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1A02840A18D0255800DCEB95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NotificationsTest/OS X/NotificationsTest-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "NotificationsTest/OS X/NotificationsTest-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1A02840C18D0255800DCEB95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NotificationsTest.app/NotificationsTest";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NotificationsTest/NotificationsTest-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "NotificationsTestTests/NotificationsTestTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1A02840D18D0255800DCEB95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NotificationsTest.app/NotificationsTest";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NotificationsTest/NotificationsTest-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "NotificationsTestTests/NotificationsTestTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -343,6 +637,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		1A02840818D0255800DCEB95 /* Build configuration list for PBXNativeTarget "NotificationsTest (OS X)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A02840918D0255800DCEB95 /* Debug */,
+				1A02840A18D0255800DCEB95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1A02840B18D0255800DCEB95 /* Build configuration list for PBXNativeTarget "NotificationsTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A02840C18D0255800DCEB95 /* Debug */,
+				1A02840D18D0255800DCEB95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
