@@ -90,7 +90,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oHw-lu-OOV">
                                 <rect key="frame" x="40" y="198" width="241" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <string key="text">The increment button is connected to the lable via a notification and observer. There are many opportunities here for retain cycles, but if you use the leaks tool you'll see that there are none.</string>
+                                <string key="text">The increment button is connected to the label via a notification and observer. There are many opportunities here for retain cycles, but if you use the leaks tool you'll see that there are none.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
