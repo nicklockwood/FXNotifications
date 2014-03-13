@@ -37,14 +37,14 @@ static NSString *const IncrementCountNotification = @"IncrementCountNotification
 - (IBAction)addObserver
 {
     //using the built-in method (in a naive way), we would leak like hell
-    //    [[NSNotificationCenter defaultCenter] addObserverForName:IncrementCountNotification
-    //                                                      object:nil
-    //                                                       queue:[NSOperationQueue mainQueue]
-    //                                                  usingBlock:^(NSNotification *note) {
-    //
-    //        UILabel *label = note.object;
-    //        label.text = [NSString stringWithFormat:@"Presses: %@", @(++self.count)];
-    //    }];
+//    [[NSNotificationCenter defaultCenter] addObserverForName:IncrementCountNotification
+//                                                      object:nil
+//                                                       queue:[NSOperationQueue mainQueue]
+//                                                  usingBlock:^(NSNotification *note) {
+//
+//        UILabel *label = note.object;
+//        label.text = [NSString stringWithFormat:@"Presses: %@", @(++self.count)];
+//    }];
     
     //using the FXNotifications method, this approach doesn't leak and just works as expected
     [[NSNotificationCenter defaultCenter] addObserver:self
