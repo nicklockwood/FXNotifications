@@ -9,7 +9,7 @@ For more details, see this article: http://sealedabstract.com/code/nsnotificatio
 Supported iOS & SDK Versions
 -----------------------------
 
-* Supported build target - iOS 7.0 / Mac OS 10.9 (Xcode 5.0, Apple LLVM compiler 5.0)
+* Supported build target - iOS 7.1 / Mac OS 10.9 (Xcode 5.1, Apple LLVM compiler 5.1)
 * Earliest supported deployment target - iOS 5.0 / Mac OS 10.7
 * Earliest compatible deployment target - iOS 5.0 / Mac OS 10.7
 
@@ -60,3 +60,21 @@ An typical usage might be:
                                            usingBlock:^(NSNotification *note, __weak id observer) {
                                                           NSLog(@"self: %@", observer); // look, no leaks!
                                                       }];
+                                                      
+
+Release Notes
+-------------------
+                                                      
+Version 1.0.2
+
+- Fixed bug where observer could not be re-attached after being removed
+
+Version 1.0.1
+
+- Fixed bug where removing the observer didn't work
+- The queue parameter now defaults to [NSOperationQueue currentQueue] if nil
+- Added CocoaPods podspec
+
+Version 1.0
+
+- Initial release
