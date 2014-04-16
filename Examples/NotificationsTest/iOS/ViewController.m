@@ -51,10 +51,10 @@ static NSString *const IncrementCountNotification = @"IncrementCountNotification
                                               forName:IncrementCountNotification
                                                object:self.label
                                                 queue:[NSOperationQueue mainQueue]
-                                           usingBlock:^(NSNotification *note, __weak ViewController *self) {
+                                           usingBlock:^(NSNotification *note, ViewController *observer) {
                                                
                                                UILabel *label = note.object;
-                                               label.text = [NSString stringWithFormat:@"Presses: %@", @(++self.count)];
+                                               label.text = [NSString stringWithFormat:@"Presses: %@", @(++observer.count)];
                                            }];
 }
 

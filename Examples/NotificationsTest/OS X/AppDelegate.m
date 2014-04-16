@@ -19,7 +19,7 @@
 
 @implementation AppDelegate
 
-- (IBAction)showSheet:(id)sender
+- (IBAction)showSheet:(__unused id)sender
 {
     WindowController *windowController = [[WindowController alloc] initWithWindowNibName:@"WindowController"];
     
@@ -32,13 +32,13 @@
     self.windowController = windowController;
 }
 
-- (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
+- (void)didEndSheet:(NSWindow *)sheet returnCode:(__unused NSInteger)returnCode contextInfo:(__unused void *)contextInfo
 {
     self.windowController = nil;
     [sheet orderOut:nil];
 }
 
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(__unused NSApplication *)sender
 {
     return YES;
 }

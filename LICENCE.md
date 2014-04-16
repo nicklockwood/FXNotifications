@@ -1,6 +1,6 @@
 FXNotifications
 
-Version 1.0.2, November 20th, 2013
+Version 1.1, April 16th, 2014
 
 Copyright (C) 2013 Charcoal Design
 

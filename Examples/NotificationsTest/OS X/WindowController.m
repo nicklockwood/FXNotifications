@@ -28,17 +28,17 @@ static NSString *const IncrementCountNotification = @"IncrementCountNotification
     [self addObserver:nil];
 }
 
-- (IBAction)closeSheet:(id)sender
+- (IBAction)closeSheet:(__unused id)sender
 {
     [NSApp endSheet:self.window];
 }
 
-- (IBAction)increment:(id)sender
+- (IBAction)increment:(__unused id)sender
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:IncrementCountNotification object:self.label];
 }
 
-- (IBAction)addObserver:(id)sender
+- (IBAction)addObserver:(__unused id)sender
 {
     //using the built-in method (in a naive way), we would leak like hell
     //    [[NSNotificationCenter defaultCenter] addObserverForName:IncrementCountNotification
@@ -55,14 +55,14 @@ static NSString *const IncrementCountNotification = @"IncrementCountNotification
                                               forName:IncrementCountNotification
                                                object:self.label
                                                 queue:[NSOperationQueue mainQueue]
-                                           usingBlock:^(NSNotification *note, __weak WindowController *self) {
+                                           usingBlock:^(NSNotification *note, WindowController *observer) {
                                                
                                                NSTextField *label = note.object;
-                                               label.stringValue = [NSString stringWithFormat:@"Presses: %@", @(++self.count)];
+                                               label.stringValue = [NSString stringWithFormat:@"Presses: %@", @(++observer.count)];
                                            }];
 }
 
-- (IBAction)removeObserver:(id)sender
+- (IBAction)removeObserver:(__unused id)sender
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:IncrementCountNotification object:self.label];
 }

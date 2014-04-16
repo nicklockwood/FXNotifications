@@ -1,7 +1,7 @@
 Purpose
 --------------
 
-FXNotifications is a category on NSNotificationCenter that provides an improved block-based API that is simpler and easier to use, and avoids the various retain cycle and memory leak pitfalls of the official API.
+FXNotifications is a category on `NSNotificationCenter` that provides an improved block-based API that is simpler and easier to use, and avoids the various retain cycle and memory leak pitfalls of the official API.
 
 For more details, see this article: http://sealedabstract.com/code/nsnotificationcenter-with-blocks-considered-harmful/ and this gist: https://gist.github.com/nicklockwood/7559729
 
@@ -39,31 +39,44 @@ Methods
 
 FXNotifications extends NSNotificationCenter with a single method
 
-    - (void)addObserver:(id)observer
-                forName:(NSString *)name
-                 object:(id)object
-                  queue:(NSOperationQueue *)queue
-             usingBlock:(void (^)(NSNotification *note, __weak id observer))block;
+    - (id)addObserver:(id)observer
+              forName:(NSString *)name
+               object:(id)object
+                queue:(NSOperationQueue *)queue
+           usingBlock:(void (^)(NSNotification *note, id observer))block;
              
 This method is a hybrid of the two built-in notification observer methods. The observer parameter is required, and represents the owner of the block argument. When the observer is released, the block will be released as well.
 
-The name, object, queue and block arguments work as they do in the normal block-based observer method. The queue parameter defaults to [NSOperationQueue currentQueue] if nil. To avoid retain cycles in your block, you can refer to the weak observer parameter that is passed as a second argument.
+The name, object, queue and block arguments work as they do in the normal block-based observer method. The queue parameter is optional - if nil is passed then the block will be executed on whichever queue the notification is posted from. To avoid retain cycles in your block, you can refer to the weak observer parameter that is passed as a second argument.
 
-There is no token value returned; to stop observing the notification, use the standard `-removeObserver:` or `-removeObserver:name:object:` methods of NSNotificationCenter. There is no need to call removeObserver: in the observer's dealloc method; this is done automatically.
+The method returns a token value that can be used to stop observing the notification, use the standard `-removeObserver:` method  of `NSNotificationCenter`, e.g.
 
-An typical usage might be:
+    [[NSNotificationCenter defaultCenter] removeObserver:token];
+    
+However, you can simply discard this token and the token will be deregistered automatically when the observer is released. There is no need to call removeObserver: in the observer's dealloc method; this is done automatically.
+
+Also, if you wish, you can deregister the observer itself using the `-removeObserver:` or `-removeObserver:name:object:` methods of `NSNotificationCenter`, so the only reason to store the token is if you wish to distinguish between multiple registrations of the same observer with the same selector.
+
+A typical usage might be:
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                               forName:NSSomeNotificationName
                                                object:nil
                                                 queue:[NSOperationQueue mainQueue]
-                                           usingBlock:^(NSNotification *note, __weak id observer) {
+                                           usingBlock:^(NSNotification *note, id observer) {
                                                           NSLog(@"self: %@", observer); // look, no leaks!
                                                       }];
                                                       
 
 Release Notes
 -------------------
+
+Version 1.1
+
+- FXNotifications no longer captures the current queue if nil is passed as the queue parameter. Instead, the block will simply be executed on whichever queue the notification is posted on.
+- Observer is no longer passed as a weak parameter to the block, which means that it is guaranteed not to be released during the block's execution
+- addObserver method now returns a unique token each time it is called, allowing it to be used in the same way as the standard implementation for fine-grained reregistration (use of the token is optional however, you can safely discard it if not needed)
+- Now conforms to -Weverything warning level
                                                       
 Version 1.0.2
 
