@@ -9,8 +9,8 @@ For more details, see this article: http://sealedabstract.com/code/nsnotificatio
 Supported iOS & SDK Versions
 -----------------------------
 
-* Supported build target - iOS 7.1 / Mac OS 10.9 (Xcode 5.1, Apple LLVM compiler 5.1)
-* Earliest supported deployment target - iOS 5.0 / Mac OS 10.7
+* Supported build target - iOS 9.3 / Mac OS 10.11 (Xcode 7.3, Apple LLVM compiler 7.0)
+* Earliest supported deployment target - iOS 7.0 / Mac OS 10.10
 * Earliest compatible deployment target - iOS 5.0 / Mac OS 10.7
 
 NOTE: 'Supported' means that the library has been tested with this version. 'Compatible' means that the library should work on this iOS version (i.e. it doesn't rely on any unavailable SDK features) but is no longer being tested for compatibility and may require tweaking or bug fixes to run correctly.
@@ -40,8 +40,8 @@ Methods
 FXNotifications extends NSNotificationCenter with a single method
 
     - (id)addObserver:(id)observer
-              forName:(NSString *)name
-               object:(id)object
+              forName:(nullable NSString *)name
+               object:(nullable id)object
                 queue:(NSOperationQueue *)queue
            usingBlock:(void (^)(NSNotification *note, id observer))block;
              
@@ -71,12 +71,17 @@ A typical usage might be:
 Release Notes
 -------------------
 
+Version 1.1.1
+
+- Removed implicit assumption that observers are NSObject subclasses (fixes issues with Swift)
+- Added nullability annotations
+
 Version 1.1
 
 - FXNotifications no longer captures the current queue if nil is passed as the queue parameter. Instead, the block will simply be executed on whichever queue the notification is posted on.
 - Observer is no longer passed as a weak parameter to the block, which means that it is guaranteed not to be released during the block's execution
 - addObserver method now returns a unique token each time it is called, allowing it to be used in the same way as the standard implementation for fine-grained reregistration (use of the token is optional however, you can safely discard it if not needed)
-- Now conforms to -Weverything warning level
+- Now conforms to `-Weverything` warning level
                                                       
 Version 1.0.2
 
@@ -85,7 +90,7 @@ Version 1.0.2
 Version 1.0.1
 
 - Fixed bug where removing the observer didn't work
-- The queue parameter now defaults to [NSOperationQueue currentQueue] if nil
+- The queue parameter now defaults to `[NSOperationQueue currentQueue]` if nil
 - Added CocoaPods podspec
 
 Version 1.0

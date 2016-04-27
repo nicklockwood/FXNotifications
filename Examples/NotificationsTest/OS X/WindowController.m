@@ -30,7 +30,7 @@ static NSString *const IncrementCountNotification = @"IncrementCountNotification
 
 - (IBAction)closeSheet:(__unused id)sender
 {
-    [NSApp endSheet:self.window];
+    [NSApp endSheet:(NSWindow *__nonnull)self.window];
 }
 
 - (IBAction)increment:(__unused id)sender

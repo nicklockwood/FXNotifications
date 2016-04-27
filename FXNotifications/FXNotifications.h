@@ -1,7 +1,7 @@
 //
 //  FXNotifications.h
 //
-//  Version 1.1
+//  Version 1.1.1
 //
 //  Created by Nick Lockwood on 20/11/2013.
 //  Copyright (c) 2013 Charcoal Design
@@ -30,19 +30,23 @@
 //  3. This notice may not be removed or altered from any source distribution.
 //
 
-
 #import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wobjc-missing-property-synthesis"
 
 @interface NSNotificationCenter (FXNotifications)
 
 - (id)addObserver:(id)observer
-          forName:(NSString *)name
-           object:(id)object
+          forName:(nullable NSString *)name
+           object:(nullable id)object
             queue:(NSOperationQueue *)queue
        usingBlock:(void (^)(NSNotification *note, id observer))block;
 
 @end
 
 #pragma GCC diagnostic pop
+
+NS_ASSUME_NONNULL_END

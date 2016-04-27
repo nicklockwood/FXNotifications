@@ -1,8 +1,8 @@
 FXNotifications
 
-Version 1.1, April 16th, 2014
+Version 1.1.1, April 27th, 2016
 
-Copyright (C) 2013 Charcoal Design
+Copyright (C) 2013 Nick Lockwood
 
 This software is provided 'as-is', without any express or implied
 warranty.  In no event will the authors be held liable for any damages

@@ -23,7 +23,7 @@
 {
     WindowController *windowController = [[WindowController alloc] initWithWindowNibName:@"WindowController"];
     
-    [NSApp beginSheet:windowController.window
+    [NSApp beginSheet:(NSWindow *__nonnull)windowController.window
        modalForWindow:self.window
         modalDelegate:self
        didEndSelector:@selector(didEndSheet:returnCode:contextInfo:)

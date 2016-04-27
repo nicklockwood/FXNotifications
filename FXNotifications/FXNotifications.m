@@ -1,7 +1,7 @@
 //
 //  FXNotifications.m
 //
-//  Version 1.1
+//  Version 1.1.1
 //
 //  Created by Nick Lockwood on 20/11/2013.
 //  Copyright (c) 2013 Charcoal Design
@@ -49,6 +49,22 @@
 typedef void (^FXNotificationBlock)(NSNotification *note, id observer);
 
 
+static NSMutableArray *FXNotificationsGetObservers(id object, BOOL create)
+{
+    @synchronized(object)
+    {
+        static void *key = &key;
+        NSMutableArray *wrappers = objc_getAssociatedObject(object, key);
+        if (!wrappers && create)
+        {
+            wrappers = [NSMutableArray array];
+            objc_setAssociatedObject(object, key, wrappers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
+        return wrappers;
+    }
+}
+
+
 @interface FXNotificationObserver : NSObject
 
 @property (nonatomic, weak) NSObject *observer;
@@ -59,41 +75,6 @@ typedef void (^FXNotificationBlock)(NSNotification *note, id observer);
 @property (nonatomic, weak) NSNotificationCenter *center;
 
 - (void)action:(NSNotification *)note;
-
-@end
-
-
-@implementation NSObject (FXNotifications)
-
-- (NSMutableArray *)FXNotifications_observers:(BOOL)create
-{
-    @synchronized(self)
-    {
-        NSMutableArray *wrappers = objc_getAssociatedObject(self, _cmd);
-        if (!wrappers && create)
-        {
-            wrappers = [NSMutableArray array];
-            objc_setAssociatedObject(self, _cmd, wrappers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        }
-        return wrappers;
-    }
-}
-
-- (void)FXNotifications_addObserver:(FXNotificationObserver *)observer
-{
-    @synchronized(self)
-    {
-        [[self FXNotifications_observers:YES] addObject:observer];
-    }
-}
-
-- (void)FXNotifications_removeObserver:(FXNotificationObserver *)observer
-{
-    @synchronized(self)
-    {
-        [[self FXNotifications_observers:NO] removeObject:observer];
-    }
-}
 
 @end
 
@@ -138,8 +119,8 @@ typedef void (^FXNotificationBlock)(NSNotification *note, id observer);
 }
 
 - (id)addObserver:(id)observer
-          forName:(NSString *)name
-           object:(id)object
+          forName:(nullable NSString *)name
+           object:(nullable id)object
             queue:(NSOperationQueue *)queue
        usingBlock:(FXNotificationBlock)block
 {
@@ -151,28 +132,28 @@ typedef void (^FXNotificationBlock)(NSNotification *note, id observer);
     container.queue = queue;
     container.center = self;
     
-    [observer FXNotifications_addObserver:container];
+    [FXNotificationsGetObservers(observer, YES) addObject:container];
     [self addObserver:container selector:@selector(action:) name:name object:object];
     return container;
 }
 
 - (void)FXNotification_removeObserver:(id)observer name:(NSString *)name object:(id)object
 {
-    for (FXNotificationObserver *container in [[observer FXNotifications_observers:NO] reverseObjectEnumerator])
+    for (FXNotificationObserver *container in [FXNotificationsGetObservers(observer, NO) reverseObjectEnumerator])
     {
         __strong id strongObject = container.object;
         if (container.center == self &&
             (!container.name || !name || [container.name isEqualToString:name]) &&
             (!strongObject || !object || strongObject == object))
         {
-            [[observer FXNotifications_observers:NO] removeObject:container];
+            [FXNotificationsGetObservers(observer, NO) removeObject:container];
         }
     }
-    if ([observer isKindOfClass:[FXNotificationObserver class]])
+    if (object_getClass(observer) == [FXNotificationObserver class])
     {
         FXNotificationObserver *container = observer;
         __strong NSObject *strongObserver = container.observer;
-        [strongObserver FXNotifications_removeObserver:container];
+        [FXNotificationsGetObservers(strongObserver, NO) removeObject:container];
     }
     [self FXNotification_removeObserver:observer name:name object:object];
 }
