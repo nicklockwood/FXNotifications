@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (id)addObserver:(id)observer
           forName:(nullable NSString *)name
            object:(nullable id)object
-            queue:(NSOperationQueue *)queue
+            queue:(nullable NSOperationQueue *)queue
        usingBlock:(void (^)(NSNotification *note, id observer))block;
 
 @end
