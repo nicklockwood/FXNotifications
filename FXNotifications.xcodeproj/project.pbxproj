@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4628F1521CD200B500EF0E20 /* FXNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 4628F1511CD200B500EF0E20 /* FXNotifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4628F15A1CD2011100EF0E20 /* FXNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 4628F1591CD2011100EF0E20 /* FXNotifications.m */; };
+		4628F1691CD2044900EF0E20 /* FXNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 4628F1511CD200B500EF0E20 /* FXNotifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4628F16A1CD2044D00EF0E20 /* FXNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 4628F1591CD2011100EF0E20 /* FXNotifications.m */; };
+		4628F1861CD20C2100EF0E20 /* FXNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 4628F1511CD200B500EF0E20 /* FXNotifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4628F1871CD20C2200EF0E20 /* FXNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 4628F1511CD200B500EF0E20 /* FXNotifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4628F1881CD20C2800EF0E20 /* FXNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 4628F1591CD2011100EF0E20 /* FXNotifications.m */; };
+		4628F1891CD20C2800EF0E20 /* FXNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 4628F1591CD2011100EF0E20 /* FXNotifications.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4628F14E1CD200B500EF0E20 /* FXNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FXNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4628F1511CD200B500EF0E20 /* FXNotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXNotifications.h; sourceTree = "<group>"; };
+		4628F1531CD200B500EF0E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		4628F1591CD2011100EF0E20 /* FXNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXNotifications.m; sourceTree = "<group>"; };
+		4628F1601CD201CF00EF0E20 /* FXNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FXNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4628F1711CD2050C00EF0E20 /* FXNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FXNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4628F17E1CD205CC00EF0E20 /* FXNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FXNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4628F14A1CD200B500EF0E20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4628F15C1CD201CF00EF0E20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4628F16D1CD2050C00EF0E20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4628F17A1CD205CC00EF0E20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4628F1441CD200B500EF0E20 = {
+			isa = PBXGroup;
+			children = (
+				4628F1501CD200B500EF0E20 /* FXNotifications */,
+				4628F14F1CD200B500EF0E20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4628F14F1CD200B500EF0E20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4628F14E1CD200B500EF0E20 /* FXNotifications.framework */,
+				4628F1601CD201CF00EF0E20 /* FXNotifications.framework */,
+				4628F1711CD2050C00EF0E20 /* FXNotifications.framework */,
+				4628F17E1CD205CC00EF0E20 /* FXNotifications.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4628F1501CD200B500EF0E20 /* FXNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				4628F1511CD200B500EF0E20 /* FXNotifications.h */,
+				4628F1591CD2011100EF0E20 /* FXNotifications.m */,
+				4628F1531CD200B500EF0E20 /* Info.plist */,
+			);
+			path = FXNotifications;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4628F14B1CD200B500EF0E20 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4628F1521CD200B500EF0E20 /* FXNotifications.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4628F15D1CD201CF00EF0E20 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4628F1691CD2044900EF0E20 /* FXNotifications.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4628F16E1CD2050C00EF0E20 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4628F1861CD20C2100EF0E20 /* FXNotifications.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4628F17B1CD205CC00EF0E20 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4628F1871CD20C2200EF0E20 /* FXNotifications.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4628F14D1CD200B500EF0E20 /* FXNotifications-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4628F1561CD200B500EF0E20 /* Build configuration list for PBXNativeTarget "FXNotifications-iOS" */;
+			buildPhases = (
+				4628F1491CD200B500EF0E20 /* Sources */,
+				4628F14A1CD200B500EF0E20 /* Frameworks */,
+				4628F14B1CD200B500EF0E20 /* Headers */,
+				4628F14C1CD200B500EF0E20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FXNotifications-iOS";
+			productName = FXNotifications;
+			productReference = 4628F14E1CD200B500EF0E20 /* FXNotifications.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4628F15F1CD201CF00EF0E20 /* FXNotifications-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4628F1651CD201CF00EF0E20 /* Build configuration list for PBXNativeTarget "FXNotifications-OSX" */;
+			buildPhases = (
+				4628F15B1CD201CF00EF0E20 /* Sources */,
+				4628F15C1CD201CF00EF0E20 /* Frameworks */,
+				4628F15D1CD201CF00EF0E20 /* Headers */,
+				4628F15E1CD201CF00EF0E20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FXNotifications-OSX";
+			productName = "FXNotifications-OSX";
+			productReference = 4628F1601CD201CF00EF0E20 /* FXNotifications.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4628F1701CD2050C00EF0E20 /* FXNotifications-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4628F1761CD2050C00EF0E20 /* Build configuration list for PBXNativeTarget "FXNotifications-watchOS" */;
+			buildPhases = (
+				4628F16C1CD2050C00EF0E20 /* Sources */,
+				4628F16D1CD2050C00EF0E20 /* Frameworks */,
+				4628F16E1CD2050C00EF0E20 /* Headers */,
+				4628F16F1CD2050C00EF0E20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FXNotifications-watchOS";
+			productName = "FXNotifications-watchOS";
+			productReference = 4628F1711CD2050C00EF0E20 /* FXNotifications.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4628F17D1CD205CC00EF0E20 /* FXNotifications-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4628F1831CD205CC00EF0E20 /* Build configuration list for PBXNativeTarget "FXNotifications-tvOS" */;
+			buildPhases = (
+				4628F1791CD205CC00EF0E20 /* Sources */,
+				4628F17A1CD205CC00EF0E20 /* Frameworks */,
+				4628F17B1CD205CC00EF0E20 /* Headers */,
+				4628F17C1CD205CC00EF0E20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FXNotifications-tvOS";
+			productName = "FXNotifications-tvOS";
+			productReference = 4628F17E1CD205CC00EF0E20 /* FXNotifications.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4628F1451CD200B500EF0E20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FX;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Nick Lockwood";
+				TargetAttributes = {
+					4628F14D1CD200B500EF0E20 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					4628F15F1CD201CF00EF0E20 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					4628F1701CD2050C00EF0E20 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					4628F17D1CD205CC00EF0E20 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 4628F1481CD200B500EF0E20 /* Build configuration list for PBXProject "FXNotifications" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4628F1441CD200B500EF0E20;
+			productRefGroup = 4628F14F1CD200B500EF0E20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4628F14D1CD200B500EF0E20 /* FXNotifications-iOS */,
+				4628F15F1CD201CF00EF0E20 /* FXNotifications-OSX */,
+				4628F1701CD2050C00EF0E20 /* FXNotifications-watchOS */,
+				4628F17D1CD205CC00EF0E20 /* FXNotifications-tvOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4628F14C1CD200B500EF0E20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4628F15E1CD201CF00EF0E20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4628F16F1CD2050C00EF0E20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4628F17C1CD205CC00EF0E20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4628F1491CD200B500EF0E20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4628F15A1CD2011100EF0E20 /* FXNotifications.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4628F15B1CD201CF00EF0E20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4628F16A1CD2044D00EF0E20 /* FXNotifications.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4628F16C1CD2050C00EF0E20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4628F1881CD20C2800EF0E20 /* FXNotifications.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4628F1791CD205CC00EF0E20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4628F1891CD20C2800EF0E20 /* FXNotifications.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4628F1541CD200B500EF0E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MODULEMAP_FILE = module.modulemap;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4628F1551CD200B500EF0E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MODULEMAP_FILE = module.modulemap;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4628F1571CD200B500EF0E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.charcoaldesign.FXNotifications;
+				PRODUCT_NAME = FXNotifications;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		4628F1581CD200B500EF0E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.charcoaldesign.FXNotifications;
+				PRODUCT_NAME = FXNotifications;
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		4628F1661CD201CF00EF0E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.charcoaldesign.FXNotifications;
+				PRODUCT_NAME = FXNotifications;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4628F1671CD201CF00EF0E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.charcoaldesign.FXNotifications;
+				PRODUCT_NAME = FXNotifications;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4628F1771CD2050C00EF0E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.charcoaldesign.FXNotifications;
+				PRODUCT_NAME = FXNotifications;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		4628F1781CD2050C00EF0E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.charcoaldesign.FXNotifications;
+				PRODUCT_NAME = FXNotifications;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		4628F1841CD205CC00EF0E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.charcoaldesign.FXNotifications;
+				PRODUCT_NAME = FXNotifications;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		4628F1851CD205CC00EF0E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.charcoaldesign.FXNotifications;
+				PRODUCT_NAME = FXNotifications;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4628F1481CD200B500EF0E20 /* Build configuration list for PBXProject "FXNotifications" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4628F1541CD200B500EF0E20 /* Debug */,
+				4628F1551CD200B500EF0E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4628F1561CD200B500EF0E20 /* Build configuration list for PBXNativeTarget "FXNotifications-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4628F1571CD200B500EF0E20 /* Debug */,
+				4628F1581CD200B500EF0E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4628F1651CD201CF00EF0E20 /* Build configuration list for PBXNativeTarget "FXNotifications-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4628F1661CD201CF00EF0E20 /* Debug */,
+				4628F1671CD201CF00EF0E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4628F1761CD2050C00EF0E20 /* Build configuration list for PBXNativeTarget "FXNotifications-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4628F1771CD2050C00EF0E20 /* Debug */,
+				4628F1781CD2050C00EF0E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4628F1831CD205CC00EF0E20 /* Build configuration list for PBXNativeTarget "FXNotifications-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4628F1841CD205CC00EF0E20 /* Debug */,
+				4628F1851CD205CC00EF0E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4628F1451CD200B500EF0E20 /* Project object */;
+}
